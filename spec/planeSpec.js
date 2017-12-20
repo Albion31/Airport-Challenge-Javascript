@@ -9,12 +9,13 @@ describe('plane', function () {
 
   describe('status', function(){
     it('should have a status flying when flying', function(){
-      expect(plane.status()).toBeTruthy();
+      expect(plane.status).toBeTruthy();
     });
 
     it('should have a status of not flying when landed', function(){
       airport.land(plane)
-      expect(plane.status()).toBeFalsy();
+      expect(plane.status).toBeFalsy();
     });
   });
+  
 });

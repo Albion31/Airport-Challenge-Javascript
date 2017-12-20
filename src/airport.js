@@ -1,8 +1,10 @@
 function Airport(){
+  this.terminal = []
 };
 
 Airport.prototype.land = function(plane){
-  plane._isNotFlying()
+  this.terminal.push(plane)
+  plane.isNotFlying()
   return plane
 };
 

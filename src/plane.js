@@ -1,15 +1,15 @@
 function Plane(){
-  this._status = true
+  this.status = true
 };
 
-Plane.prototype._isFlying = function(){
-  this._status = true;
+Plane.prototype.isFlying = function(){
+  this.status = true;
 };
 
-Plane.prototype._isNotFlying = function(){
-  this._status = false
+Plane.prototype.isNotFlying = function(){
+  this.status = false
 };
 
 Plane.prototype.status = function(){
-  return this._status
+  return this.status
 };
