@@ -1,4 +1,4 @@
-describe("land", function(){
+describe("aiport", function(){
   var plane;
   var airport;
 
@@ -7,7 +7,16 @@ describe("land", function(){
     airport = new Airport();
   });
 
-  it ("should land a plane", function(){
-    expect(airport.land(plane)).toEqual(plane)
+  describe("land", function(){
+    it ("should land a plane", function(){
+      expect(airport.land(plane)).toEqual(plane)
+    });
   });
+
+  describe("take off", function(){
+    it("should instruct plane to take off", function(){
+      expect(airport.takeOff(plane)).toEqual(plane)
+    });
+  });
+
 });
