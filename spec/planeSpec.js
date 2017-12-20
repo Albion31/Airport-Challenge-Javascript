@@ -16,6 +16,7 @@ describe('plane', function () {
       airport.land(plane)
       expect(plane.status).toBeFalsy();
     });
+
   });
-  
+
 });

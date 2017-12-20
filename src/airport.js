@@ -9,5 +9,6 @@ Airport.prototype.land = function(plane){
 };
 
 Airport.prototype.takeOff = function(plane){
-  return plane
+  this.terminal.pop(plane)
+  return `${plane} has left the airport.`
 };
