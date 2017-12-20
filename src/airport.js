@@ -2,5 +2,6 @@ function Airport(){
 };
 
 Airport.prototype.land = function(plane){
-  return plane
+  plane._isNotFlying()
+  return plane 
 };
