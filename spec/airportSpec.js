@@ -68,8 +68,25 @@ describe("aiport", function () {
 
     it("should prevent planes from landing when terminal is full", function(){
       spyOn(Math, 'random').and.returnValue(0);
-      [1,2,3].forEach(function() { airport.land(plane) });
+      airport.capacity = 0
       expect(function() { airport.land(plane); }).toThrowError("Airport is full")
     });
   });
+
+  describe("edge case", function(){
+    it("should raise error when calling land on landed plane", function(){
+      spyOn(Math, 'random').and.returnValue(0);
+      airport.land(plane)
+      expect(function(){ airport.land(plane); }).toThrowError("Plane has already landed")
+    });
+
+    it("should raise error when calling take off on flying plane", function(){
+      spyOn(Math, 'random').and.returnValue(0);
+      airport.land(plane)
+      airport.takeOff(plane)
+      expect(function(){ airport.takeOff(plane); }).toThrowError("Plane is already flying")
+    });
+
+  });
+
 });
